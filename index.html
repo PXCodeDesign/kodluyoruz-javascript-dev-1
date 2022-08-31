@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodluyoruz Javascript Ödev-1</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 800px;
+            height: 500px;
+            background-color: aliceblue;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: x-large;
+            overflow: hidden;
+        }
+
+
+
+        #title {
+            justify-content: center;
+            display: flex;
+        }
+
+        #name {
+            justify-content: center;
+            display: flex;
+        }
+
+        .date {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+        }
+
+        #date {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 200px;
+            height: 20px;
+            background-color: aquamarine;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .comment {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .comment p{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 700px;
+            height: 40px;
+            background-color: aliceblue;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 id="title">KODLUYORUZ</h1>
+            <h3 id="name"></h3>
+            <div class="date"><span id="date"></span>
+                
+            </div>
+            <div class="comment">
+                <p >
+                    Tarihinde kodluyoruz.org & Patika.dev Frontend WEB Patikasının Javascript bölümünün 1. Ödevini
+                    Görüyorsun.
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        let name = prompt("İsminiz")
+        let nameDOM = document.querySelector("#name")
+        nameDOM.innerHTML = `Merhaba ${name}, Hoşgeldin`
+        function saatGuncelleme() {
+            let dateDOM = document.querySelector("#date")
+            const d = new Date();
+            const days = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+            let hours = d.getHours();
+            let minutes = d.getMinutes();
+            let seconds = d.getSeconds();
+            let time = d.getTime();
+            console.log(time)
+            let day = days[d.getDay()]
+            dateDOM.innerHTML = `${hours}:${minutes}:${seconds} ${day} `
+        }
+        setInterval(saatGuncelleme, 1000)
+    </script>
+</body>
+
+</html>
